@@ -1,6 +1,6 @@
 /*
- * grunt-gitPull
- * https://github.com/lkwdwrd/grunt-gitPull
+ * grunt-svn-checkout
+ * https://github.com/lkwdwrd/grunt-svn-checkout
  *
  * Copyright (c) 2014 Luke Woodward
  * Licensed under the MIT license.
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('svn-checkout', 'Checkout and update SVN repos with Grunt', function () {
+  grunt.registerMultiTask('svn_checkout', 'Checkout and update SVN repos with Grunt', function () {
     // Merge task-specific and/or target-specific options with these defaults.
     var done = this.async(),
         commands = [],

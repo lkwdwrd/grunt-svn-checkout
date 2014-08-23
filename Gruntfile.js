@@ -1,6 +1,6 @@
 /*
- * grunt-gitPull
- * https://github.com/lkwdwrd/grunt-gitPull
+ * grunt-svn-checkout
+ * https://github.com/lkwdwrd/grunt-svn-checkout
  *
  * Copyright (c) 2014 Luke Woodward
  * Licensed under the MIT license.
@@ -32,7 +32,7 @@ module.exports = function (grunt) {
     },
 
     // Configuration to be run (and then tested).
-    gitPull: {
+    svn_checkout: {
       default_options: {
         options: {
         },
@@ -63,7 +63,7 @@ module.exports = function (grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'gitPull', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'svn_checkout', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

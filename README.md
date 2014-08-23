@@ -1,4 +1,4 @@
-# grunt-gitPull
+# grunt-svn-checkout
 
 > Clone and Pull repos with Grunt
 
@@ -8,23 +8,23 @@ This plugin requires Grunt.
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-gitPull --save-dev
+npm install grunt-svn-checkout --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-gitPull');
+grunt.loadNpmTasks('grunt-svn-checkout');
 ```
 
-## The "gitPull" task
+## The "svn_checkout" task
 
 ### Overview
-In your project's Gruntfile, add a section named `gitPull` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `svn_checkout` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  gitPull: {
+  svn_checkout: {
     set: {
       repos: [
         // array of object with relative path arrays and repo keys.
@@ -34,23 +34,23 @@ grunt.initConfig({
 })
 ```
 
-Now when running `grunt gitPull` the plugin will check all paths and see if there is a git repo in them. If so, it will run a git pull on that repository. If it is not present, it will run `git clone` with the repository specified.
+Now when running `grunt svn_checkout` the plugin will check all paths and see if there is an SVN repo in them. If so, it will run `svn up` on that repository. If it is not present, it will run `svn checkout` with the repository specified.
 
 ### Usage Example
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
+In this example, we're pulling two different SVN repos, both located in different places at https://svn.example.com/. The first repo we are checking out to `relative/path/` and the second to `another/path/`. 
 
 ```js
 grunt.initConfig({
-  gitPull: {
+  svn_checkout: {
     example: {
       repos: [
         {
           path: ['relative', 'path'], // relative/path/
-          repo: 'git@git.repository.com/myRepo.git'
+          repo: 'https://svn.example.com/something/'
         },
         {
           path: ['another', 'path'] // another/path/
-          repo: 'git@git.repository.com/otherRepo.git'
+          repo: 'https://svn.example.com/something-else/'
         }
       ]
     },
@@ -59,23 +59,11 @@ grunt.initConfig({
 ```
 
 ## Release History
-**0.1.4**
-
- - Support older version of git
- 
-**0.1.2**
-
- - Parse out the repo name rather than specifying it.
-
-**0.1.1**
-
- - Report which repo is being processed.
- - Fix README docs.
 
 **0.1.0**
 
  - First release.
- - Basic git clone/pull behavior.
+ - Basic svn checkout/update behavior.
 
 ## License
 Copyright (c) 2014 Luke Woodward. Licensed under the MIT license.
