@@ -45,7 +45,7 @@ module.exports = function (grunt) {
       if ( repos[ i ].dir ) {
         dir = repos[ i ].dir;
       } else {
-        dir = repos[ i ].repo.match(/\/([^\/]+?)(?:.svn)?$/);
+        dir = repos[ i ].repo.match(/\/([^\/]+?)(?:.svn)?(?:\/)?$/);
         if ( ! dir[1] ) {
           grunt.log.warn('There was some trouble parsing the repository ' + repos[ i ].repo );
           continue;
