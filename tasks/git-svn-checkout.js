@@ -59,7 +59,7 @@ module.exports = function (grunt) {
       
       // validate outer directory
       if ( ! grunt.file.isDir( relPath.outer ) ) {
-        grunt.log.warn('The directory "' + relPath + '" not found.');
+        grunt.log.warn('The directory "' + relPath.outer + '" not found.');
         continue;
       }
       
