@@ -8,7 +8,8 @@
 
 'use strict';
 
-var path  = require('path'),
+var path  = require( 'path' ),
+    mkdirp = require( 'mkdirp' ),
     async = require( 'async' );
 
 
@@ -58,10 +59,7 @@ module.exports = function (grunt) {
       relPath.inner = relPath.outer + path.sep + dir;
       
       // validate outer directory
-      if ( ! grunt.file.isDir( relPath.outer ) ) {
-        grunt.log.warn('The directory "' + relPath + '" not found.');
-        continue;
-      }
+      mkdirp( relPath.outer );
       
       // Set up pull or clone
       if ( grunt.file.isDir( relPath.inner + path.sep  + '.svn' ) ) {
