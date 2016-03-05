@@ -1,6 +1,6 @@
 {
   "name": "grunt-svn-checkout",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Checkout and update SVN repos with Grunt",
   "homepage": "https://github.com/lkwdwrd/grunt-svn-checkout",
   "repository": "https://github.com/lkwdwrd/grunt-svn-checkout",
